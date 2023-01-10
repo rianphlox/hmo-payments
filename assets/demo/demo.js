@@ -388,11 +388,12 @@ demo = {
     marker.setMap(map);
   },
 
-  showNotification: function(from, align, color, msg) {
+  showNotification: function(from, align, color, msg, icon) {
     color = color;
-
+    icon = `nc-icon ${icon}`
+    console.log(icon)
     $.notify({
-      icon: "nc-icon nc-check-2",
+      icon: icon,
       message: msg
 
     }, {

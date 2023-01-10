@@ -1,6 +1,6 @@
 <?php
-    require_once '../config/DB.php';
-    $db =  new DB();
+require_once '../config/DB.php';
+$db =  new DB();
 ?>
 
 <?php include '../inc/head.php' ?>
@@ -47,8 +47,11 @@
                     <thead class=" text-primary">
                       <th>Date</th>
                       <th>HMO Name</th>
+                      <th>Amount</th>
                       <th>Date of Submission</th>
                       <th class="_text-right">Amount Submitted</th>
+                      <th>Date of Payment</th>
+                      <th>Amount Paid</th>
                     </thead>
                     <tbody>
                       <?php $results = $db->getData('hmo_payments'); ?>
@@ -64,10 +67,13 @@
                         <?php foreach ($results->fetch_all(MYSQLI_ASSOC) as $result) : ?>
                           <?php extract($result) ?>
                           <tr>
-                            <td><?= $date ?></td>
+                            <td><?= $db->formatDate($date) ?></td>
                             <td><?= $hmo_name ?></td>
-                            <td><?= $dos ?></td>
-                            <td class="_text-right">&#x20A6;<?= $amount_submitted ?></td>
+                            <td><?= $amount ?></td>
+                            <td><?= $db->formatDate($dos) ?></td>
+                            <td>&#x20A6;<?= $amount_submitted ?></td>
+                            <td><?= $db->formatDate($date_of_payment_s) ?></td>
+                            <td>&#x20A6;<?= $amount_paid ?></td>
                           </tr>
                         <?php endforeach ?>
                       <?php endif; ?>
@@ -85,12 +91,12 @@
                 <p class="card-category"> Here is a subtitle for this table</p>
               </div>
               <div class="card-body">
-                
+
                 <select class="form-control" onchange="location = this.value;">
                   <?php $results = $db->getData('hmos', true, 'hmo_name', 'asc'); ?>
-                  <?php foreach($results->fetch_all(MYSQLI_ASSOC) as $result): ?>
+                  <?php foreach ($results->fetch_all(MYSQLI_ASSOC) as $result) : ?>
                     <?php extract($result) ?>
-                    <option value="hmo/?name=<?= $hmo_name ?>"><?= $hmo_name ?></option>
+                    <option value="./?name=<?= $hmo_name ?>"><?= $hmo_name ?></option>
                   <?php endforeach; ?>
                 </select>
               </div>

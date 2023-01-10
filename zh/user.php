@@ -1,3 +1,7 @@
+<?php 
+  require_once '../config/DB.php';
+  $db =  new DB();
+?>
 <?php include '../inc/head.php' ?>
 
 <body class="">
@@ -19,48 +23,7 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li>
-            <a href="./dashboard.php">
-              <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li>
-            <a href="./icons.php">
-              <i class="nc-icon nc-diamond"></i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li>
-            <a href="./map.php">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li>
-            <a href="./notifications.php">
-              <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li class="active ">
-            <a href="./user.php">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
-            </a>
-          </li>
-          <li>
-            <a href="./hmos.php">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li>
-            <a href="./typography.php">
-              <i class="nc-icon nc-caps-small"></i>
-              <p>Typography</p>
-            </a>
-          </li>
+          <?php include '../inc/nav_links.php' ?>
         </ul>
       </div>
     </div>
@@ -169,13 +132,13 @@
               </div>
             </div>
           </div> -->
-          <div class="col-md-8">
+          <div class="col-md-6">
             <div class="card card-user">
               <div class="card-header">
-                <h5 class="card-title">Add HMO Payment</h5>
+                <h5 class="card-title">Add HMO Payment (Captitation)</h5>
               </div>
               <div class="card-body">
-                <!-- <form id="add" method="POST" action="<?= $_SERVER['PHP_SELF'] ?>"> -->
+                
                 <form id="add">
                   <div class="row">
                     <div class="col-md-6 pr-1">
@@ -196,31 +159,74 @@
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Amount</label>
-                        <input type="number" min="0" class="form-control" value="amount">
+                        <input type="number" min="0" name="amount" class="form-control" value="amount">
                       </div>
                     </div>
 
-                    <div class="col-md-6 pl-1">
+                  </div>
+                  
+                  <div class="_row">
+                    <div class="_update ml-auto _mr-auto">
+                      <button type="submit" class="btn btn-block btn-primary _btn-round">Add Payment</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-user">
+              <div class="card-header">
+                <h5 class="card-title">Add HMO Payment (Secondary Payments)</h5>
+              </div>
+              <div class="card-body">
+                <form id="addSecondary">
+                  <div class="row">
+                    <div class="col-md-12 pr-1">
+                      <div class="form-group">
+                        <label>Name of HMO</label>
+                        <select name="hmo_name" id="hmo_name" class="form-control">
+                          <?php $hmos = $db->getData('hmos', true, 'hmo_name', 'asc') ?>
+                          <?php foreach($hmos->fetch_all(MYSQLI_ASSOC) as $hmo): ?>
+                            <?php extract($hmo); ?>
+                            <option value=""><?= $hmo_name ?></option>
+                          <?php  endforeach ?>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <!-- <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" min="0" name="amount" class="form-control" value="amount">
+                      </div>
+                    </div> -->
+
+                    <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Date of Submission for Fee of Service</label>
                         <input type="date" class="form-control" name="dos">
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
+
+                    <div class="col-md-6">
                       <div class="form-group">
                         <label>Amount Submitted</label>
                         <input type="number" class="form-control" min="0" name="amount_submitted" id="">
                       </div>
                     </div>
-                    <div class="col-md-4">
+                  </div>
+                  <div class="row">
+                    
+                    <div class="col-md-6">
                       <div class="form-group">
                         <label>Date of Payment</label>
                         <input type="date" name="date_of_payment_s" id="zcx" class="form-control">
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <div class="form-group">
                         <label>Amount Paid</label>
                         <input type="number" name="amount_paid" id="zx" min="0" class="form-control">
@@ -238,7 +244,7 @@
           </div>
         </div>
       </div>
-      <?php include '../inc//footer.php' ?>
+      <?php include '../inc/footer.php' ?>
     </div>
   </div>
 
@@ -253,8 +259,8 @@
         })
         .then(res => res.json())
         .then(data => {
-          demo.showNotification('top', 'right', data.msgClass, data.msg);
-          form.reset()
+          demo.showNotification('top', 'right', data.msgClass, data.msg, data.icon);
+          form.reset();
         })
     })
   </script>
