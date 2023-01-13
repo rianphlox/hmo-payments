@@ -261,7 +261,6 @@
         .then(data => {
           demo.showNotification('top', 'right', data.msgClass, data.msg, data.icon);
           form.reset();
-          
         })
     })
   </script>

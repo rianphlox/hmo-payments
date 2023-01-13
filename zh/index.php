@@ -49,10 +49,11 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <select name="year" id="" class="form-control">
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
+                                    <select class="form-control form-select-sm" name="year" id="" onchange="location = this.value;">
+                                        <option  value="index?name=<?= $name ?>&year=2020">2020</option>
+                                        <option <?= $year == '2021' ? 'selected' : ''  ?> value="index?name=<?= $name ?>&year=2021">2021</option>
+                                        <option <?= $year == '2022' ? 'selected' : ''  ?> value="index?name=<?= $name ?>&year=2022">2022</option>
+                                        <option <?= $year == '2023' ? 'selected' : ''  ?> value="index?name=<?= $name ?>&year=2023">2023</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
