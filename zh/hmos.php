@@ -96,7 +96,7 @@
                   <?php $results = $db->getData('hmos', true, 'hmo_name', 'asc'); ?>
                   <?php foreach ($results->fetch_all(MYSQLI_ASSOC) as $result) : ?>
                     <?php extract($result) ?>
-                    <option value="./?name=<?= $hmo_name ?>&year=2023"><?= $hmo_name ?></option>
+                    <option value="./?name=<?= $hmo_name ?>&year=<?= $date('Y') ?>"><?= $hmo_name ?></option>
                   <?php endforeach; ?>
                 </select>
               </div>
