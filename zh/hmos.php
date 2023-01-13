@@ -70,10 +70,6 @@
                             <td><?= $db->formatDate($date) ?></td>
                             <td><?= $hmo_name ?></td>
                             <td>&#x20A6; <?= number_format($amount) ?></td>
-                            <!-- <td><?= $db->formatDate($dos) ?></td>
-                            <td>&#x20A6;<?= $amount_submitted ?></td>
-                            <td><?= $db->formatDate($date_of_payment_s) ?></td>
-                            <td>&#x20A6;<?= $amount_paid ?></td> -->
                           </tr>
                         <?php endforeach ?>
                       <?php endif; ?>
