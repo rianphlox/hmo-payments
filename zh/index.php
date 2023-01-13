@@ -2,6 +2,7 @@
     require_once '../config/DB.php';
     $db =  new DB();
     $name = $_GET['name'];
+    $year = $_GET['year'];
 
 
 ?>
@@ -19,7 +20,7 @@
                     <!-- <p>CT</p> -->
                 </a>
                 <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-                    Creative Tim
+                Crown Hospital
                     <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->
@@ -70,13 +71,10 @@
                                         <thead class=" text-primary">
                                             <th>Date</th>
                                             <th>HMO Name</th>
-                                            <th>Date of Submission</th>
-                                            <th class="_text-right">Amount Submitted</th>
-                                            <th>Date of Payment</th>
                                             <th>Amount Paid</th>
                                         </thead>
                                         <tbody>
-                                            <?php $results = $db->getHMOPayments($name, '2023') ?>
+                                            <?php $results = $db->getHMOPayments($name, $year) ?>
                                             <?php if (!$results) : ?>
                                             <?php else : ?>
                                                 <?php foreach ($results->fetch_all(MYSQLI_ASSOC) as $result) : ?>
@@ -84,10 +82,7 @@
                                                     <tr>
                                                         <td><?= $db->formatDate($date) ?></td>
                                                         <td><?= $hmo_name ?></td>
-                                                        <td><?= $db->formatDate($date) ?></td>
-                                                        <td class="_text-right">&#x20A6;<?= $amount_submitted ?></td>
-                                                        <td><?= $db->formatDate($date_of_payment_s) ?></td>
-                                                        <td>&#x20A6;<?= $amount_paid ?></td>
+                                                        <td>&#x20A6;<?= number_format($amount) ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             <?php endif; ?>

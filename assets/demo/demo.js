@@ -391,7 +391,7 @@ demo = {
   showNotification: function(from, align, color, msg, icon) {
     color = color;
     icon = `nc-icon ${icon}`
-    console.log(icon)
+    
     $.notify({
       icon: icon,
       message: msg

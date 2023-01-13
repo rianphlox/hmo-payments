@@ -1,6 +1,6 @@
 <?php
-require_once '../config/DB.php';
-$db =  new DB();
+  require_once '../config/DB.php';
+  $db =  new DB();
 ?>
 
 <?php include '../inc/head.php' ?>
@@ -39,7 +39,7 @@ $db =  new DB();
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> HMO Payments</h4>
+                <h4 class="card-title"> HMO Payments (Capitation)</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -48,13 +48,13 @@ $db =  new DB();
                       <th>Date</th>
                       <th>HMO Name</th>
                       <th>Amount</th>
-                      <th>Date of Submission</th>
+                      <!-- <th>Date of Submission</th>
                       <th class="_text-right">Amount Submitted</th>
                       <th>Date of Payment</th>
-                      <th>Amount Paid</th>
+                      <th>Amount Paid</th> -->
                     </thead>
                     <tbody>
-                      <?php $results = $db->getData('hmo_payments'); ?>
+                      <?php $results = $db->getData('hmo_payments', true, 'id', 'desc'); ?>
                       <?php if (!$results->num_rows) : ?>
                         <tr>
                           <td>No result found</td>
@@ -69,11 +69,11 @@ $db =  new DB();
                           <tr>
                             <td><?= $db->formatDate($date) ?></td>
                             <td><?= $hmo_name ?></td>
-                            <td><?= $amount ?></td>
-                            <td><?= $db->formatDate($dos) ?></td>
+                            <td>&#x20A6; <?= number_format($amount) ?></td>
+                            <!-- <td><?= $db->formatDate($dos) ?></td>
                             <td>&#x20A6;<?= $amount_submitted ?></td>
                             <td><?= $db->formatDate($date_of_payment_s) ?></td>
-                            <td>&#x20A6;<?= $amount_paid ?></td>
+                            <td>&#x20A6;<?= $amount_paid ?></td> -->
                           </tr>
                         <?php endforeach ?>
                       <?php endif; ?>
@@ -96,7 +96,7 @@ $db =  new DB();
                   <?php $results = $db->getData('hmos', true, 'hmo_name', 'asc'); ?>
                   <?php foreach ($results->fetch_all(MYSQLI_ASSOC) as $result) : ?>
                     <?php extract($result) ?>
-                    <option value="./?name=<?= $hmo_name ?>"><?= $hmo_name ?></option>
+                    <option value="./?name=<?= $hmo_name ?>&year=2023"><?= $hmo_name ?></option>
                   <?php endforeach; ?>
                 </select>
               </div>
