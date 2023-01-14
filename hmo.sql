@@ -1,6 +1,6 @@
 
 
-CREATE TABLE IF NOT EXISTS `hmo_payments` (
+CREATE TABLE `hmo_payments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `hmo_name` varchar(30) NOT NULL,
@@ -70,7 +70,7 @@ INSERT INTO hmo_payments VALUES
 
 
 
-CREATE TABLE IF NOT EXISTS `hmos` (
+CREATE TABLE `hmos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `hmo_name` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
@@ -102,7 +102,7 @@ INSERT INTO hmos VALUES
 
 
 
-CREATE TABLE IF NOT EXISTS `secondary_payments` (
+CREATE TABLE `secondary_payments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dos` date NOT NULL,
   `amount_submitted` int(10) NOT NULL,
