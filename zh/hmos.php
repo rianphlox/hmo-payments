@@ -23,9 +23,7 @@
         </a>
       </div>
       <div class="sidebar-wrapper">
-        <ul class="nav">
           <?php include '../inc/nav_links.php' ?>
-        </ul>
       </div>
     </div>
     <div class="main-panel">
@@ -48,13 +46,9 @@
                       <th>Date</th>
                       <th>HMO Name</th>
                       <th>Amount</th>
-                      <!-- <th>Date of Submission</th>
-                      <th class="_text-right">Amount Submitted</th>
-                      <th>Date of Payment</th>
-                      <th>Amount Paid</th> -->
                     </thead>
                     <tbody>
-                      <?php $results = $db->getData('hmo_payments', true, 'id', 'desc'); ?>
+                      <?php $results = $db->getData('hmo_payments', true, 'id', 'desc', 10); ?>
                       <?php if (!$results->num_rows) : ?>
                         <tr>
                           <td>No result found</td>

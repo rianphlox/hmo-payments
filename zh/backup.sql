@@ -1,0 +1,345 @@
+DROP TABLE hmo_payments;
+
+CREATE TABLE `hmo_payments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `hmo_name` varchar(30) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `note` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=293 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO hmo_payments VALUES("1","2020-07-10","PHML","565500","");
+INSERT INTO hmo_payments VALUES("2","2020-07-10","PHML","6750","");
+INSERT INTO hmo_payments VALUES("3","2020-07-13","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("4","2020-07-13","United Health","21000","");
+INSERT INTO hmo_payments VALUES("5","2020-07-13","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("6","2020-07-15","HCL Health","10500","");
+INSERT INTO hmo_payments VALUES("7","2020-07-15","Wellness Healthcare","12000","");
+INSERT INTO hmo_payments VALUES("8","2020-07-16","xx/uni","45750","");
+INSERT INTO hmo_payments VALUES("9","2020-07-17","Nonsuch","20250","");
+INSERT INTO hmo_payments VALUES("10","2020-07-17","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("11","2020-07-20","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("12","2020-07-20","United Comprehensive","6000","");
+INSERT INTO hmo_payments VALUES("13","2020-07-20","Songhai Health","24750","");
+INSERT INTO hmo_payments VALUES("14","2020-07-21","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("15","2020-07-21","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("16","2020-07-24","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("17","2020-07-26","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("18","2020-07-28","United Health","21000","");
+INSERT INTO hmo_payments VALUES("19","2020-07-29","Prepaid Medicare","10500","");
+INSERT INTO hmo_payments VALUES("20","2020-07-29","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("21","2020-08-03","PHML","565500","");
+INSERT INTO hmo_payments VALUES("22","2020-08-03","PHML","6750","");
+INSERT INTO hmo_payments VALUES("23","2020-08-04","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("24","2020-08-04","Wellness Healthcare","12000","");
+INSERT INTO hmo_payments VALUES("25","2020-08-07","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("26","2020-08-09","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("27","2020-08-09","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("28","2020-08-10","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("29","2020-08-12","Songhai Health","24750","");
+INSERT INTO hmo_payments VALUES("30","2020-08-15","United Comprehensive","6000","");
+INSERT INTO hmo_payments VALUES("31","2020-08-18","Unity UB11410228","45750","");
+INSERT INTO hmo_payments VALUES("32","2020-08-19","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("33","2020-06-19","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("34","2020-08-20","Nonsuch","20250","");
+INSERT INTO hmo_payments VALUES("35","2020-08-24","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("36","2020-08-24","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("37","2020-08-24","Prepaid","5250","");
+INSERT INTO hmo_payments VALUES("38","2020-08-26","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("39","2020-08-28","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("40","2020-09-30","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("41","2020-09-30","United Health","21000","");
+INSERT INTO hmo_payments VALUES("42","2020-09-30","Prepaid Medicare","15750","");
+INSERT INTO hmo_payments VALUES("43","2020-09-01","United Comprehensive","6000","");
+INSERT INTO hmo_payments VALUES("44","2020-09-02","PHML","561750","");
+INSERT INTO hmo_payments VALUES("45","2020-09-02","Ultimate Health","1500","");
+INSERT INTO hmo_payments VALUES("46","2020-10-02","Wellness Healthcare","12000","");
+INSERT INTO hmo_payments VALUES("47","2020-10-05","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("48","2020-10-08","Nonsuch","18000","");
+INSERT INTO hmo_payments VALUES("49","2020-10-08","United Comprehensive","6000","");
+INSERT INTO hmo_payments VALUES("50","2020-10-09","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("51","2020-10-12","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("52","2020-10-12","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("53","2020-10-12","Songhai Health","24750","");
+INSERT INTO hmo_payments VALUES("54","2020-10-12","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("55","2020-10-13","Healthcare International","10500","");
+INSERT INTO hmo_payments VALUES("56","2020-10-16","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("57","2020-10-26","United Comprehensive","6000","");
+INSERT INTO hmo_payments VALUES("58","2020-10-27","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("59","2020-10-27","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("60","2020-10-29","United Health","21000","");
+INSERT INTO hmo_payments VALUES("61","2020-11-02","THT","121500","");
+INSERT INTO hmo_payments VALUES("62","2020-11-03","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("63","2020-11-03","Wellness Healthcare","12000","");
+INSERT INTO hmo_payments VALUES("64","2020-11-03","Precious Health","45000","");
+INSERT INTO hmo_payments VALUES("65","2020-11-03","Ultimate Health","1500","");
+INSERT INTO hmo_payments VALUES("66","2020-11-04","PHML","561750","");
+INSERT INTO hmo_payments VALUES("67","2020-11-04","United Healthcare","181500","");
+INSERT INTO hmo_payments VALUES("68","2020-11-05","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("69","2020-11-05","Nonsuch","18000","");
+INSERT INTO hmo_payments VALUES("70","2020-11-05","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("71","2020-11-05","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("72","2020-11-05","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("73","2020-11-06","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("74","2020-11-06","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("75","2020-11-09","Songhai Health","24750","");
+INSERT INTO hmo_payments VALUES("76","2020-11-10","Precious Health","45000","");
+INSERT INTO hmo_payments VALUES("77","2020-11-12","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("78","2020-11-12","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("79","2020-11-12","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("80","2020-11-13","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("81","2020-11-17","HCL Health","10500","");
+INSERT INTO hmo_payments VALUES("82","2020-11-17","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("83","2020-11-27","United Health","21000","");
+INSERT INTO hmo_payments VALUES("84","2020-11-27","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("85","2020-11-30","Wellness Healthcare","12000","");
+INSERT INTO hmo_payments VALUES("86","2020-12-01","PHML","561750","");
+INSERT INTO hmo_payments VALUES("87","2020-12-01","PHML","91482","");
+INSERT INTO hmo_payments VALUES("88","2020-12-01","PHML","74080","");
+INSERT INTO hmo_payments VALUES("89","2020-12-01","Ultimate Health","1500","");
+INSERT INTO hmo_payments VALUES("90","2020-12-02","United Comprehensive Health","6000","");
+INSERT INTO hmo_payments VALUES("91","2020-12-02","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("92","2020-12-04","Nonsuch","18000","");
+INSERT INTO hmo_payments VALUES("93","2020-12-04","COP08MEMU936416","45000","");
+INSERT INTO hmo_payments VALUES("94","2020-12-07","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("95","2020-12-18","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("96","2020-12-08","Songhai Health","24750","");
+INSERT INTO hmo_payments VALUES("97","2020-12-14","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("98","2020-12-15","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("99","2020-12-15","HCL Health","10500","");
+INSERT INTO hmo_payments VALUES("100","2021-01-04","United Comprehensive Health","21000","");
+INSERT INTO hmo_payments VALUES("101","2021-01-04","PHML","561000","");
+INSERT INTO hmo_payments VALUES("102","2021-01-08","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("103","2021-01-08","Ultimate Health","1500","");
+INSERT INTO hmo_payments VALUES("104","2021-01-11","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("105","2021-01-12","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("106","2021-01-12","United Comprehensive Health","6000","");
+INSERT INTO hmo_payments VALUES("107","2021-01-13","HCL Health","9750","");
+INSERT INTO hmo_payments VALUES("108","2021-02-13","Precious Health","45000","");
+INSERT INTO hmo_payments VALUES("109","2021-01-13","Nonsuch","18000","");
+INSERT INTO hmo_payments VALUES("110","2021-01-13","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("111","2021-01-14","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("112","2021-01-14","Wellness Healthcare","16500","");
+INSERT INTO hmo_payments VALUES("113","2021-01-15","Songhai Health","24750","");
+INSERT INTO hmo_payments VALUES("114","2021-01-16","Solina","63060","");
+INSERT INTO hmo_payments VALUES("115","2021-01-19","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("116","2021-01-19","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("117","2021-01-20","Prepaid Medicare","15750","");
+INSERT INTO hmo_payments VALUES("118","2021-01-21","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("119","2021-01-27","United Comprehensive Health","6000","");
+INSERT INTO hmo_payments VALUES("120","2021-02-01","United Healthcare","21000","");
+INSERT INTO hmo_payments VALUES("121","2021-02-01","PHML","561000","");
+INSERT INTO hmo_payments VALUES("122","2021-02-01","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("123","2021-02-02","Ultimate Health","1500","");
+INSERT INTO hmo_payments VALUES("124","2021-02-04","Songhai Health","24750","");
+INSERT INTO hmo_payments VALUES("125","2021-02-05","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("126","2021-02-06","Wellness Healthcare","16500","");
+INSERT INTO hmo_payments VALUES("127","2021-02-07","Nonsuch","18000","");
+INSERT INTO hmo_payments VALUES("128","2021-02-08","Unity","45000","");
+INSERT INTO hmo_payments VALUES("129","2021-02-09","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("130","2021-02-11","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("131","2021-02-12","HCL Health","9750","");
+INSERT INTO hmo_payments VALUES("132","2021-02-12","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("133","2021-02-15","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("134","2021-02-16","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("135","2021-02-17","Ultimate Health","6000","");
+INSERT INTO hmo_payments VALUES("136","2021-02-24","THT","133500","");
+INSERT INTO hmo_payments VALUES("137","2021-02-25","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("138","2021-02-25","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("139","2021-02-25","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("140","2021-02-25","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("141","2021-02-25","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("142","2021-02-26","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("143","2021-02-26","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("144","2021-02-26","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("145","2021-03-01","PHML","561000","");
+INSERT INTO hmo_payments VALUES("146","2021-03-01","United Comprehensive Health","6000","");
+INSERT INTO hmo_payments VALUES("147","2021-03-01","United Health","21000","");
+INSERT INTO hmo_payments VALUES("148","2021-03-02","Ultimate Health","7500","");
+INSERT INTO hmo_payments VALUES("149","2021-03-03","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("150","2021-03-03","Nonsuch","18000","");
+INSERT INTO hmo_payments VALUES("151","2021-03-03","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("152","2021-03-03","Ultimate Health","1500","");
+INSERT INTO hmo_payments VALUES("153","2021-03-04","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("154","2021-03-04","ICS0013","216750","");
+INSERT INTO hmo_payments VALUES("155","2021-03-08","N-10082817811","45000","");
+INSERT INTO hmo_payments VALUES("156","2021-03-10","Songhai Health","24750","");
+INSERT INTO hmo_payments VALUES("157","2021-03-11","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("158","2021-03-22","HCL Health","9750","");
+INSERT INTO hmo_payments VALUES("159","2021-04-08","United Health","25500","");
+INSERT INTO hmo_payments VALUES("160","2021-04-08","PHML","567000","");
+INSERT INTO hmo_payments VALUES("161","2021-04-09","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("162","2021-04-12","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("163","2021-04-13","Ultimate Health","1500","");
+INSERT INTO hmo_payments VALUES("164","2021-04-14","Nonsuch","18000","");
+INSERT INTO hmo_payments VALUES("165","2021-04-14","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("166","2021-04-15","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("167","2021-04-16","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("168","2021-04-16","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("169","2021-04-19","Songhai Health","24750","");
+INSERT INTO hmo_payments VALUES("170","2021-04-19","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("171","2021-04-20","10085501851","45000","");
+INSERT INTO hmo_payments VALUES("172","2021-04-21","HCL Health","9750","");
+INSERT INTO hmo_payments VALUES("173","2021-04-22","Wellness Healthcare","16500","");
+INSERT INTO hmo_payments VALUES("174","2021-04-23","Solina","40000","");
+INSERT INTO hmo_payments VALUES("175","2021-04-26","United Comprehensive Health","6000","");
+INSERT INTO hmo_payments VALUES("176","2021-04-27","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("177","2021-04-08","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("178","2021-05-03","Wellness Healthcare","16500","");
+INSERT INTO hmo_payments VALUES("179","2021-05-04","PHML","567000","");
+INSERT INTO hmo_payments VALUES("180","2021-05-05","Ultimate Health","25500","");
+INSERT INTO hmo_payments VALUES("181","2021-05-05","Nonsuch","18000","");
+INSERT INTO hmo_payments VALUES("182","2021-05-06","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("183","2021-05-07","PHML","1500","");
+INSERT INTO hmo_payments VALUES("184","2021-05-10","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("185","2021-05-10","United Comprehensive","6000","");
+INSERT INTO hmo_payments VALUES("186","2021-05-12","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("187","2021-05-14","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("188","2021-05-14","Songhai","24750","");
+INSERT INTO hmo_payments VALUES("189","2021-05-19","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("190","2021-05-19","10088070056","5250","");
+INSERT INTO hmo_payments VALUES("191","2021-05-20","HCL Health","9750","");
+INSERT INTO hmo_payments VALUES("192","2021-05-25","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("193","2021-05-28","Prepaid Medicare","5250","");
+INSERT INTO hmo_payments VALUES("194","2021-05-28","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("195","2021-05-28","Clearline International","5250","");
+INSERT INTO hmo_payments VALUES("196","2021-05-31","United Comprehensive Health","6000","");
+INSERT INTO hmo_payments VALUES("197","2021-06-01","PHML","1500","");
+INSERT INTO hmo_payments VALUES("198","2021-06-02","PHML","567000","");
+INSERT INTO hmo_payments VALUES("199","2021-06-04","Nonsuch","18000","");
+INSERT INTO hmo_payments VALUES("200","2021-06-04","Ultimate Health","1500","");
+INSERT INTO hmo_payments VALUES("201","2021-06-07","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("202","2021-06-08","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("203","2021-06-09","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("204","2021-06-11","Sunus Health","15750","");
+INSERT INTO hmo_payments VALUES("205","2021-06-11","Prepaid Medicare","5250","");
+INSERT INTO hmo_payments VALUES("206","2021-06-11","Wellness Healthcare","16500","");
+INSERT INTO hmo_payments VALUES("207","2021-06-15","Songhai","960391","");
+INSERT INTO hmo_payments VALUES("208","2021-06-16","HCL","9750","");
+INSERT INTO hmo_payments VALUES("209","2021-06-16","United Comprehensive Health","25500","");
+INSERT INTO hmo_payments VALUES("210","2021-06-18","United Comprehensive Health","45000","");
+INSERT INTO hmo_payments VALUES("211","2021-06-23","PHML","2250","");
+INSERT INTO hmo_payments VALUES("212","2021-07-08","PHML","587250","");
+INSERT INTO hmo_payments VALUES("213","2021-07-08","United Comprehensive Health","126000","");
+INSERT INTO hmo_payments VALUES("214","2021-07-08","THT","76500","");
+INSERT INTO hmo_payments VALUES("215","2021-07-09","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("216","2021-07-09","United Comprehensive Health","25500","");
+INSERT INTO hmo_payments VALUES("217","2021-07-12","Ultimate Health","1500","");
+INSERT INTO hmo_payments VALUES("218","2021-07-12","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("219","2021-07-13","Prepaid Medicare","5250","");
+INSERT INTO hmo_payments VALUES("220","2021-07-13","10091917029 Unity","48000","");
+INSERT INTO hmo_payments VALUES("221","2021-07-14","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("222","2021-07-14","United Comprehensive Health","6000","");
+INSERT INTO hmo_payments VALUES("223","2021-07-14","Venus Medicare","7500","");
+INSERT INTO hmo_payments VALUES("224","2021-07-14","Sunu Health","15000","");
+INSERT INTO hmo_payments VALUES("225","2021-07-14","COP08HMmV956080","15000","");
+INSERT INTO hmo_payments VALUES("226","2021-07-14","Zuma Health","15000","");
+INSERT INTO hmo_payments VALUES("227","2021-07-15","HCL","12750","");
+INSERT INTO hmo_payments VALUES("228","2021-07-15","Nonsuch","18000","");
+INSERT INTO hmo_payments VALUES("229","2021-07-19","Wellness Healthcare","16500","");
+INSERT INTO hmo_payments VALUES("230","2021-07-20","Solina","40000","");
+INSERT INTO hmo_payments VALUES("231","2021-07-22","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("232","2021-07-23","Allco Multishield","3000","");
+INSERT INTO hmo_payments VALUES("233","2021-07-26","Songhai","24750","");
+INSERT INTO hmo_payments VALUES("234","2021-08-06","PHML","576000","");
+INSERT INTO hmo_payments VALUES("235","2021-08-09","Ultimate Health","1500","");
+INSERT INTO hmo_payments VALUES("236","2021-08-10","Ronsberger","3750","");
+INSERT INTO hmo_payments VALUES("237","2021-08-10","Venus Medicare","4500","");
+INSERT INTO hmo_payments VALUES("238","2021-08-16","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("239","2021-08-17","Prepaid Medicare","5250","");
+INSERT INTO hmo_payments VALUES("240","2021-08-18","Integrated","2250","");
+INSERT INTO hmo_payments VALUES("250","2021-08-19","Sunu Health","15000","");
+INSERT INTO hmo_payments VALUES("251","2021-08-20","Songhai","24750","");
+INSERT INTO hmo_payments VALUES("252","2021-08-26","Clearline International","4500","");
+INSERT INTO hmo_payments VALUES("253","2021-08-25","Precious Healthcare","101171","");
+INSERT INTO hmo_payments VALUES("254","2021-08-31","Venus Medicare","11250","");
+INSERT INTO hmo_payments VALUES("255","2021-09-01","PHML","576000","");
+INSERT INTO hmo_payments VALUES("256","2021-09-02","Prepaid Medicare","5250","");
+INSERT INTO hmo_payments VALUES("257","2021-09-02","United Comprehensive Health","20729","");
+INSERT INTO hmo_payments VALUES("258","2021-09-02","United Comprehensive Health","24750","");
+INSERT INTO hmo_payments VALUES("259","2021-09-03","PHML","85513","");
+INSERT INTO hmo_payments VALUES("260","2021-09-10","Hygeia","4500","");
+INSERT INTO hmo_payments VALUES("261","2021-09-27","THT","76500","April-June");
+INSERT INTO hmo_payments VALUES("262","2021-10-04","PHML","567750","-");
+INSERT INTO hmo_payments VALUES("263","2021-10-04","Nonsuch","21750","-");
+INSERT INTO hmo_payments VALUES("264","2021-10-04","Integrated","2250","-");
+INSERT INTO hmo_payments VALUES("265","2021-10-04","Wellness Healthcare","15750","-");
+INSERT INTO hmo_payments VALUES("266","2021-10-05","Venus Medicare","11250","-");
+INSERT INTO hmo_payments VALUES("267","2021-10-06","United Health","26250","-");
+INSERT INTO hmo_payments VALUES("268","2021-10-08","United Comprehensive","6000","-");
+INSERT INTO hmo_payments VALUES("269","2021-10-08","United Health","130500","-");
+INSERT INTO hmo_payments VALUES("270","2021-10-08","Total Health","12000","-");
+INSERT INTO hmo_payments VALUES("271","2021-10-08","Ultimate Health","1500","-");
+INSERT INTO hmo_payments VALUES("272","2021-10-11","Prepaid Medicare","5250","-");
+INSERT INTO hmo_payments VALUES("273","2021-10-11","COPO8KIPV36742","19500","FHIS May Cap");
+INSERT INTO hmo_payments VALUES("274","2021-10-11","COPO8KIPV363918","15000","FHIS Cap April");
+INSERT INTO hmo_payments VALUES("275","2021-10-11","Clearline International","4500","-");
+INSERT INTO hmo_payments VALUES("276","2021-10-12","THT","3000","-");
+INSERT INTO hmo_payments VALUES("277","2021-10-13","Sunu Health","15000","-");
+INSERT INTO hmo_payments VALUES("278","2021-10-13","Ronsberger","3750","-");
+INSERT INTO hmo_payments VALUES("279","2021-10-13","Allco Multishield","3000","-");
+INSERT INTO hmo_payments VALUES("280","2021-10-15","COPO8k0LV45450","24000","FHSS June Cap");
+INSERT INTO hmo_payments VALUES("281","2021-10-18","HCL","13500","-");
+INSERT INTO hmo_payments VALUES("282","2021-10-20","Integrated","2250","-");
+INSERT INTO hmo_payments VALUES("283","2021-10-20","Unity","48000","-");
+INSERT INTO hmo_payments VALUES("284","2021-10-29","Clearline International","4500","-");
+INSERT INTO hmo_payments VALUES("285","2021-11-01","PHML","576750","-");
+INSERT INTO hmo_payments VALUES("286","2021-11-02","United Health","26250","-");
+INSERT INTO hmo_payments VALUES("287","2021-11-03","Wellness Healthcare","15750","-");
+INSERT INTO hmo_payments VALUES("288","2021-11-03","Solina","38000","-");
+INSERT INTO hmo_payments VALUES("289","2021-11-05","Ronsberger","3750","-");
+INSERT INTO hmo_payments VALUES("290","2021-11-05","Ultimate Health","1500","-");
+INSERT INTO hmo_payments VALUES("291","2021-11-14","Songhai","24750","-");
+INSERT INTO hmo_payments VALUES("292","2021-11-14","Hygeia","4500","-");
+
+
+
+DROP TABLE hmos;
+
+CREATE TABLE `hmos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hmo_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO hmos VALUES("1","PHML");
+INSERT INTO hmos VALUES("2","Venus Medicare");
+INSERT INTO hmos VALUES("3","United Health");
+INSERT INTO hmos VALUES("4","Nonsuch");
+INSERT INTO hmos VALUES("5","Ronsberger");
+INSERT INTO hmos VALUES("6","THT");
+INSERT INTO hmos VALUES("7","Pro Health");
+INSERT INTO hmos VALUES("8","Prepaid Medicare");
+INSERT INTO hmos VALUES("9","Songhai Health");
+INSERT INTO hmos VALUES("10","Princeton");
+INSERT INTO hmos VALUES("11","Ultimate Health");
+INSERT INTO hmos VALUES("12","HCL Health");
+INSERT INTO hmos VALUES("13","Allco Multshield");
+INSERT INTO hmos VALUES("14","Clearline International");
+INSERT INTO hmos VALUES("15","United Comprehensive");
+INSERT INTO hmos VALUES("16","Zuma Health");
+INSERT INTO hmos VALUES("17","Ashmed");
+INSERT INTO hmos VALUES("18","Unity Health Precious");
+INSERT INTO hmos VALUES("19","Sunus Health");
+INSERT INTO hmos VALUES("20","Wellness Healthcare");
+INSERT INTO hmos VALUES("21","Precious Health");
+INSERT INTO hmos VALUES("22","Solina");
+INSERT INTO hmos VALUES("23","Hygeia");
+
+
+
+DROP TABLE secondary_payments;
+
+CREATE TABLE `secondary_payments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dos` date NOT NULL,
+  `amount_submitted` int(10) NOT NULL,
+  `date_of_payment_s` date NOT NULL,
+  `amount_paid` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+

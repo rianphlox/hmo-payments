@@ -7,7 +7,7 @@
         public $host;
         public $user;
         public $password;
-        public $database;
+        public $dbname;
         public $conn;
 
         public function __construct($host = 'localhost', $user = 'root', $password = '', $dbname = 'hmo') {
@@ -27,10 +27,10 @@
             return htmlentities(trim($field));
         }
 
-        public function addCapitationPayment ($date, $hmo_name, $amount, ) {
-            $sql = "INSERT INTO `hmo_payments` ( `date`, `hmo_name`, `amount`) VALUES ( ?, ?, ?) ";
+        public function addCapitationPayment ($date, $hmo_name, $amount, $note) {
+            $sql = "INSERT INTO `hmo_payments` ( `date`, `hmo_name`, `amount`, `note`) VALUES ( ?, ?, ?, ?)";
             $stmt =  $this->conn->prepare($sql );
-            $stmt->bind_param('ssi', $date, $hmo_name, $amount );
+            $stmt->bind_param('ssis', $date, $hmo_name, $amount, $note );
             if ($stmt->execute()) {
                 return ['msg' => "Payment Added", 'msgClass' => 'success', 'icon' => 'nc-check-2'];
             }
@@ -45,8 +45,12 @@
             }
         }
         
-        public function getData($table, $order=false, $column="", $manner="") {
-            $sql = !$order ? "select * from $table" : "SELECT * FROM $table ORDER BY `$table`.`$column` $manner" ;
+        public function getData($table, $order=false, $column="", $manner="", $limit=false) {
+            if (!$limit) {
+                $sql = !$order  ? "select * from $table" : "SELECT * FROM $table ORDER BY `$table`.`$column` $manner" ;
+            } else {
+                $sql = "SELECT * FROM $table ORDER BY `$table`.`$column` $manner LIMIT $limit";
+            }
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             return $stmt->get_result();

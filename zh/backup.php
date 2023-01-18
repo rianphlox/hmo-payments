@@ -77,8 +77,14 @@
         //$backup_name = $backup_name ? $backup_name : $name."___(".date('H-i-s')."_".date('d-m-Y').")__rand".rand(1,11111111).".sql";
         $date = date("Y-m-d");
         $backup_name = $backup_name ? $backup_name : $name.".$date.sql";
-        header('Content-Type: application/octet-stream');
-        header("Content-Transfer-Encoding: Binary");
-        header("Content-disposition: attachment; filename=\"".$backup_name."\"");
-        echo $content; exit;
+        // header('Content-Type: application/octet-stream');
+        // header("Content-Transfer-Encoding: Binary");
+        // header("Content-disposition: attachment; filename=\"".$backup_name."\"");
+        // echo $content; exit;
+        $handle = fopen('hmo.sql', 'w+');
+        fwrite($handle, $content);
+        fclose($handle);
+
+        // echo "success";
+        
     }

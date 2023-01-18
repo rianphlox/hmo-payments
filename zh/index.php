@@ -27,9 +27,7 @@
                 </a>
             </div>
             <div class="sidebar-wrapper">
-                <ul class="nav">
-                    <?php include '../inc/nav_links.php' ?>
-                </ul>
+                <?php include '../inc/nav_links.php' ?>
             </div>
         </div>
         <div class="main-panel">
@@ -50,10 +48,10 @@
                                 </div>
                                 <div class="col-md-4">
                                     <select class="form-control form-select-sm" name="year" id="" onchange="location = this.value;">
-                                        <option  value="index?name=<?= $name ?>&year=2020">2020</option>
-                                        <option <?= $year == '2021' ? 'selected' : ''  ?> value="index?name=<?= $name ?>&year=2021">2021</option>
-                                        <option <?= $year == '2022' ? 'selected' : ''  ?> value="index?name=<?= $name ?>&year=2022">2022</option>
-                                        <option <?= $year == '2023' ? 'selected' : ''  ?> value="index?name=<?= $name ?>&year=2023">2023</option>
+                                        <option  value="./?name=<?= $name ?>&year=2020">2020</option>
+                                        <option <?= $year == '2021' ? 'selected' : ''  ?> value="./?name=<?= $name ?>&year=2021">2021</option>
+                                        <option <?= $year == '2022' ? 'selected' : ''  ?> value="./?name=<?= $name ?>&year=2022">2022</option>
+                                        <option <?= $year == '2023' ? 'selected' : ''  ?> value="./?name=<?= $name ?>&year=2023">2023</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
@@ -73,6 +71,8 @@
                                             <th>Date</th>
                                             <th>HMO Name</th>
                                             <th>Amount Paid</th>
+                                            <th>Note</th>
+
                                         </thead>
                                         <tbody>
                                             <?php $results = $db->getHMOPayments($name, $year) ?>
@@ -84,6 +84,7 @@
                                                         <td><?= $db->formatDate($date) ?></td>
                                                         <td><?= $hmo_name ?></td>
                                                         <td>&#x20A6;<?= number_format($amount) ?></td>
+                                                        <td><?= $note ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             <?php endif; ?>

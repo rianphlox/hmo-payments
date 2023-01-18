@@ -22,9 +22,7 @@
         </a>
       </div>
       <div class="sidebar-wrapper">
-        <ul class="nav">
           <?php include '../inc/nav_links.php' ?>
-        </ul>
       </div>
     </div>
     <div class="main-panel">
@@ -160,6 +158,12 @@
                       <div class="form-group">
                         <label>Amount</label>
                         <input type="number" min="0" name="amount" class="form-control" value="amount">
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label>Note (Optional)</label>
+                        <input type="text" class="form-control" name="note">
                       </div>
                     </div>
 
