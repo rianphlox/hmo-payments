@@ -1,6 +1,6 @@
-<?php 
-  require_once '../config/DB.php';
-  $db =  new DB();
+<?php
+require_once '../config/DB.php';
+$db =  new DB();
 ?>
 <?php include '../inc/head.php' ?>
 
@@ -22,7 +22,7 @@
         </a>
       </div>
       <div class="sidebar-wrapper">
-          <?php include '../inc/nav_links.php' ?>
+        <?php include '../inc/nav_links.php' ?>
       </div>
     </div>
     <div class="main-panel">
@@ -136,7 +136,7 @@
                 <h5 class="card-title">Add HMO Payment (Captitation)</h5>
               </div>
               <div class="card-body">
-                
+
                 <form id="add">
                   <div class="row">
                     <div class="col-md-6 pr-1">
@@ -168,7 +168,7 @@
                     </div>
 
                   </div>
-                  
+
                   <div class="_row">
                     <div class="_update ml-auto _mr-auto">
                       <button type="submit" class="btn btn-block btn-primary _btn-round">Add Payment</button>
@@ -191,10 +191,10 @@
                         <label>Name of HMO</label>
                         <select name="hmo_name" id="hmo_name" class="form-control">
                           <?php $hmos = $db->getData('hmos', true, 'hmo_name', 'asc') ?>
-                          <?php foreach($hmos->fetch_all(MYSQLI_ASSOC) as $hmo): ?>
+                          <?php foreach ($hmos->fetch_all(MYSQLI_ASSOC) as $hmo) : ?>
                             <?php extract($hmo); ?>
-                            <option value=""><?= $hmo_name ?></option>
-                          <?php  endforeach ?>
+                            <option><?= $hmo_name ?></option>
+                          <?php endforeach ?>
                         </select>
                       </div>
                     </div>
@@ -223,7 +223,7 @@
                     </div>
                   </div>
                   <div class="row">
-                    
+
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Date of Payment</label>
@@ -266,6 +266,20 @@
           demo.showNotification('top', 'right', data.msgClass, data.msg, data.icon);
           form.reset();
         })
+    })
+
+    const secondaryForm = document.querySelector('#addSecondary')
+    secondaryForm.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch('../req/sec.php', {
+          method: 'POST',
+          body: new FormData(secondaryForm)
+        }).then(res => res.json())
+        .then(data => {
+          demo.showNotification('top', 'right', data.msgClass, data.msg, data.icon);
+          form.reset();
+        })
+
     })
   </script>
 </body>

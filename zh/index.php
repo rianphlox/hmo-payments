@@ -1,8 +1,8 @@
 <?php
-    require_once '../config/DB.php';
-    $db =  new DB();
-    $name = $_GET['name'];
-    $year = $_GET['year'];
+require_once '../config/DB.php';
+$db =  new DB();
+$name = $_GET['name'];
+$year = $_GET['year'];
 
 
 ?>
@@ -20,7 +20,7 @@
                     <!-- <p>CT</p> -->
                 </a>
                 <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-                Crown Hospital
+                    Crown Hospital
                     <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->
@@ -38,26 +38,30 @@
                 <div class="row">
 
                     <div class="col-md-12">
+
+                        <div class="row ml-1 mb-2">
+                            <a href="hmos" class="btn btn-success">Back</a>
+                        </div>
                         <div class="row">
-                                <div class="col-md-6">
-                                    <select name="month" id="" class="form-control form-select-sm">
-                                        <option value="">January</option>
-                                        <option value="">February</option>
-                                        <option value="">March</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <select class="form-control form-select-sm" name="year" id="" onchange="location = this.value;">
-                                        <option  value="./?name=<?= $name ?>&year=2020">2020</option>
-                                        <option <?= $year == '2021' ? 'selected' : ''  ?> value="./?name=<?= $name ?>&year=2021">2021</option>
-                                        <option <?= $year == '2022' ? 'selected' : ''  ?> value="./?name=<?= $name ?>&year=2022">2022</option>
-                                        <option <?= $year == '2023' ? 'selected' : ''  ?> value="./?name=<?= $name ?>&year=2023">2023</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <button  class="btn btn-success btn-sm" >Apply</button>
-                                </div>
-                            
+                            <div class="col-md-6">
+                                <select name="month" id="" class="form-control form-select-sm">
+                                    <option value="">January</option>
+                                    <option value="">February</option>
+                                    <option value="">March</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control form-select-sm" name="year" id="" onchange="location = this.value;">
+                                    <option value="./?name=<?= $name ?>&year=2020">2020</option>
+                                    <option <?= $year == '2021' ? 'selected' : ''  ?> value="./?name=<?= $name ?>&year=2021">2021</option>
+                                    <option <?= $year == '2022' ? 'selected' : ''  ?> value="./?name=<?= $name ?>&year=2022">2022</option>
+                                    <option <?= $year == '2023' ? 'selected' : ''  ?> value="./?name=<?= $name ?>&year=2023">2023</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-success btn-sm">Apply</button>
+                            </div>
+
                         </div>
                         <div class="card card-plain">
                             <div class="card-header">

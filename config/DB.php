@@ -36,7 +36,7 @@
             }
         }
 
-        public function addSecondaryPayment($date_of_submission, $amount_submitted, $date_of_payment, $amount_paid) {
+        public function addSecondaryPayment($hmo_name, $date_of_submission, $amount_submitted, $date_of_payment, $amount_paid) {
             $sql = "INSERT INTO `secondary_payments` ( `dos`, `amount_submitted`, `date_of_payment_s`, `amount_paid`) VALUES ( ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param('sisi', $date_of_submission, $amount_submitted, $date_of_payment, $amount_paid);

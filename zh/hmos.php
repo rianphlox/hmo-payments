@@ -48,7 +48,7 @@
                       <th>Amount</th>
                     </thead>
                     <tbody>
-                      <?php $results = $db->getData('hmo_payments', true, 'id', 'desc', 10); ?>
+                      <?php $results = $db->getData('hmo_payments', true, 'date', 'desc', 10); ?>
                       <?php if (!$results->num_rows) : ?>
                         <tr>
                           <td>No result found</td>
